@@ -11,7 +11,7 @@ import org.gephi.graph.api.Edge;
  *
  * @author william
  */
-public class RunSimulationStep_AllNeighborsSame extends RunningSimulationBase {
+public class RunSimulationStep_AllNeighborsSame_NoNeutral extends RunningSimulationBase {
     
     @Override
     public Believe calculateNewBeliefForNode(Node node) {
@@ -40,10 +40,11 @@ public class RunSimulationStep_AllNeighborsSame extends RunningSimulationBase {
                  }
             }
             if (num_believes_set>0) {
+                 // Neutral is |A-B|< [(A+B)/2]*0.1 = (A+B)/20
                  double a = believeA_count*preference_a;
                  double b = believeB_count*preference_b;
                  if (java.lang.Math.abs(a-b)<(a+b)/20) {
-                     return new Believe(Believe.believe_neutral);
+                     return getCurrentBelieve(node); // This is "Neutral"
                  }
                  if (a>b) {
                      return new Believe(Believe.believe_A);
@@ -51,7 +52,8 @@ public class RunSimulationStep_AllNeighborsSame extends RunningSimulationBase {
                  if (b>a) {
                      return new Believe(Believe.believe_B);
                  }
-                 return new Believe(Believe.believe_neutral);
+                 // return new Believe(Believe.believe_neutral);
+                 return getCurrentBelieve(node);
             }
         }
         return getCurrentBelieve(node);

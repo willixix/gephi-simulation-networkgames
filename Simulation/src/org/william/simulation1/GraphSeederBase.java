@@ -22,17 +22,25 @@ public class GraphSeederBase extends SimBase implements GraphSeeder {
         num_to_seed_B = numB;
     }
     
+    // This is where actual seeding will be done
     @Override
-    public void seedGraph_NoMessage() {
+    public boolean seedGraph_NoMessage() {
+        return true;
     }
     
     @Override
     public void seedGraph() {
-            seedGraph_NoMessage();
-            colorGraphByBelieve();
-            String display_text = "Seeding complete\n\n"+
+            String display_text = "";
+            boolean seededOk = seedGraph_NoMessage();
+            if (seededOk) {
+                colorGraphByBelieve();
+                display_text = "Seeding complete\n\n"+
                     "Nodes set to believe A: "+done_set_A+"\n"+
                     "Nodes set to believe B: "+done_set_B+"\n";
+            }
+            else {
+                display_text = "Failed to seed the graph.\n\nDid you prepare it first?\n";
+            }
             NotifyDescriptor d = new NotifyDescriptor.Message(display_text, NotifyDescriptor.INFORMATION_MESSAGE);
             DialogDisplayer.getDefault().notify(d);
     }

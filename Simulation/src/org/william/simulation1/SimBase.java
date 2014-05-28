@@ -28,6 +28,8 @@ public class SimBase {
     protected final static String reputationAttribute = "reputation_value";
     protected final static String reputationAttributeLastTime = "reputation_value_last";
     protected final static String reputationUsedAttribute = "has_influence";
+    protected final static String payoffAttribute = "payoff_value";
+    protected final static String payoffAttributeLastTime = "paoff_value_last";
    
     // Consructor. it gets graph object ready
     public SimBase() {
@@ -72,7 +74,7 @@ public class SimBase {
         if (a!=null && lock()) {
             a.setValue(believeAttribute, pos.getIntegerValue());
             unlock();
-        }        
+        }
     }
 
     public Believe getCurrentBelieve(Node node) {
@@ -80,7 +82,7 @@ public class SimBase {
         if (a!=null && a.getValue(believeAttribute)!=null) {
             return new Believe((Integer)a.getValue(believeAttribute));
         }
-        return null;
+        return Believe.Believe_Unset;
     }
 
     public Believe getLastBelieve(Node node) {
@@ -88,7 +90,7 @@ public class SimBase {
         if (a!=null && a.getValue(believeAttributeLastTime)!=null) {
             return new Believe((Integer)a.getValue(believeAttributeLastTime));
         }
-        return null;
+        return Believe.Believe_Unset;
     }
     
     public Double getReputationValue(Edge edge) {
@@ -101,9 +103,12 @@ public class SimBase {
 
     public void setReputationValue(Edge edge, Double new_reputation) {
         Attributes a = edge.getAttributes();
-        if (a!=null && a.getValue(reputationAttribute)!=null && lock()) {
+        boolean ret = false;
+        if (a!=null && lock()) {
             Double old_reputation = (Double)a.getValue(reputationAttribute);
-            a.setValue(reputationAttributeLastTime, old_reputation);
+            if (old_reputation != null) {
+                a.setValue(reputationAttributeLastTime, old_reputation);
+            }
             a.setValue(reputationAttribute, new_reputation);
             unlock();
         }
@@ -161,6 +166,45 @@ public class SimBase {
         return c;
     }
     
+    protected void payoffCurrentToLast() {
+        if (lock()) {
+            for(Node node : graph.getNodes().toArray()) {
+                  Attributes a = node.getAttributes();
+                  if (a.getValue(payoffAttribute)!= null) {
+                       a.setValue(payoffAttributeLastTime, a.getValue(payoffAttribute));
+                  }
+            }
+            unlock();
+        }        
+    }
+    
+    public void setPayoff(Node node, double payoff_in) {
+        Double payoff = new Double(payoff_in);
+        Attributes a = node.getAttributes();
+        if (a!=null && lock()) {
+            a.setValue(payoffAttribute, payoff);
+            unlock();
+        }
+    }
+
+    public double getCurrentPayoff(Node node) {
+        Attributes a = node.getAttributes();
+        if (a!=null && a.getValue(payoffAttribute)!=null) {
+            Double payoff = (Double)a.getValue(payoffAttribute);
+            return payoff.doubleValue();
+        }
+        return 0.0;
+    }
+
+    public double getLastPayoff(Node node) {
+        Attributes a = node.getAttributes();
+        if (a!=null && a.getValue(payoffAttributeLastTime)!=null) {
+            Double payoff = (Double)a.getValue(payoffAttributeLastTime);
+            return payoff.doubleValue();
+        }
+        return 0.0;
+    }
+
     public int getDegree(Node n) {
         if (graph!=null && n!=null) {
             return graph.getEdges(n).toArray().length;
@@ -209,13 +253,13 @@ public class SimBase {
     }
 
     public String getString_CountNodesByBelieve() {
-        return " - # Believe A nodes: " +
+        return " - # Belief A nodes: " +
                 countBelieveNodes(Believe.Believe_A) +
-               " - # Believe B nodes: " +
+               " - # Belief B nodes: " +
                 countBelieveNodes(Believe.Believe_B) +
-               " - # Neutral believe nodes: " +
+               " - # Neutral belief nodes: " +
                 countBelieveNodes(Believe.Believe_Neutral) +
-               " - # Unset believe nodes: " +
+               " - # Unset belief nodes: " +
                countBelieveNodes(Believe.Believe_Unset);
     }
         

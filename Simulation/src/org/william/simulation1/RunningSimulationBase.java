@@ -13,18 +13,31 @@ import java.util.Map;
  * @author william
  */
 public class RunningSimulationBase extends SimBase implements RunableSimulation {
-    protected double preference_a = 1.0;
-    protected double preference_b = 1.0;
+    protected double preference_a;
+    protected double preference_b;
  
+    RunningSimulationBase() {
+        super();
+        preference_a = 1.0;
+        preference_b = 1.0;        
+    }
+    
     @Override
     public void runSimulation(int num_iterations, double preference_a_in, double preference_b_in) {
             preference_a = preference_a_in;
             preference_b = preference_b_in;
             for (int i=1; i<= num_iterations; i++) {
-                believeCurrentToLast();
                 runIteration();
             }
             colorGraphByBelieve();
+    }
+
+    @Override
+    public int runIteration() {
+            believeCurrentToLast();
+            payoffCurrentToLast();
+            updatePayoffs(); // used only by some models
+            return updateBeliefs();// updates beiefs for all nodes
     }
     
     @Override
@@ -36,7 +49,6 @@ public class RunningSimulationBase extends SimBase implements RunableSimulation 
             int n=1;
             int m=0;
             for (int i=1; i<= max_iterations && n>0; i++) {
-                believeCurrentToLast();
                 n=runIteration();
                 m++;
                 if (i==1) {
@@ -61,11 +73,11 @@ public class RunningSimulationBase extends SimBase implements RunableSimulation 
     }
     
     @Override
-    public int runIteration() {
+    public int updateBeliefs() {
         int n=0;
         for(Node node : graph.getNodes().toArray()) {
             Believe p_old = getCurrentBelieve(node);
-            Believe p_new =  calculateNewBelieveForNode(node);
+            Believe p_new =  calculateNewBeliefForNode(node);
             if (!p_new.isBelieveUnknown() && !p_old.equals(p_new)) {
                 setBelieve(node,p_new);
                 n++;
@@ -82,7 +94,7 @@ public class RunningSimulationBase extends SimBase implements RunableSimulation 
         Map<Node, Believe> map = new HashMap<Node, Believe>();
         for(Node node : graph.getNodes().toArray()) {
             Believe p_old = getCurrentBelieve(node);
-            Believe p_new =  calculateNewBelieveForNode(node);
+            Believe p_new =  calculateNewBeliefForNode(node);
             if (!p_new.isBelieveUnknown() && !p_old.equals(p_new)) {
                 map.put(node, p_new);
             }
@@ -93,10 +105,22 @@ public class RunningSimulationBase extends SimBase implements RunableSimulation 
         }
         return n;
     }
+    
+    @Override
+    public void updatePayoffs() {
+        for(Node node : graph.getNodes().toArray()) {
+            setPayoff(node, calculatePayoffForNode(node));
+        }
+    }
 
     @Override
-    public Believe calculateNewBelieveForNode(Node node) {
+    public Believe calculateNewBeliefForNode(Node node) {
         return new Believe(Believe.believe_unknown);
     }
-    
+
+    @Override
+    public double calculatePayoffForNode(Node node) {
+        return 0.0;
+    }
+
 }

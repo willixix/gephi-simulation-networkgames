@@ -1,0 +1,168 @@
+2014-05-16 08:43:03 - 
+2014-05-16 08:43:03 - going to run all simulations and trials. seed_a_start=1 seed_a_end=3 seed_b_start=1 seed_b_end=1 sim_pref_a_start=1.0 sim_pref_a_end=1.4 sim_pref_a_step=0.1 sim_pref_b_start=1.0 sim_pref_b_end=1.5 sim_pref_b_step=0.1
+2014-05-16 08:43:03 - 
+2014-05-16 08:43:03 - preparing to run 20 trials with seed_pref_a=1 seed_pref_b=1 sim_pref_a=1.0 sim_pref_b=1.0
+2014-05-16 08:43:03 - 
+2014-05-16 08:43:03 - trial 1: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 8 8 4 (avg 6)- Believe B degrees: 8 8 8(avg 8)
+2014-05-16 08:43:03 - trial 1: simulation complete with 26 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:03 - trial 1: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:03 - 
+2014-05-16 08:43:03 - trial 2: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 16 8 6 (avg 10)- Believe B degrees: 12 6 4(avg 7)
+2014-05-16 08:43:04 - trial 2: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:04 - trial 2: simulation end  - # Believe A nodes: 26 - # Believe B nodes: 163 - # Neutral believe nodes: 11 - # Unset believe nodes: 0
+2014-05-16 08:43:04 - 
+2014-05-16 08:43:04 - trial 3: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 6 6 (avg 6)- Believe B degrees: 10 8 6(avg 8)
+2014-05-16 08:43:04 - trial 3: simulation complete with 27 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:04 - trial 3: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:04 - 
+2014-05-16 08:43:04 - trial 4: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 20 4 4 (avg 9)- Believe B degrees: 12 4 8(avg 8)
+2014-05-16 08:43:05 - trial 4: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:05 - trial 4: simulation end  - # Believe A nodes: 127 - # Believe B nodes: 49 - # Neutral believe nodes: 24 - # Unset believe nodes: 0
+2014-05-16 08:43:05 - 
+2014-05-16 08:43:05 - trial 5: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 6 8 (avg 6)- Believe B degrees: 6 6 4(avg 5)
+2014-05-16 08:43:05 - trial 5: simulation complete with 33 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:05 - trial 5: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:05 - 
+2014-05-16 08:43:05 - trial 6: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 4 4 (avg 4)- Believe B degrees: 6 6 6(avg 6)
+2014-05-16 08:43:05 - trial 6: simulation complete with 31 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:05 - trial 6: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:05 - 
+2014-05-16 08:43:05 - trial 7: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 12 4 4 (avg 6)- Believe B degrees: 16 6 4(avg 8)
+2014-05-16 08:43:05 - trial 7: simulation complete with 13 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:05 - trial 7: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:05 - 
+2014-05-16 08:43:05 - trial 8: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 4 12 6 (avg 7)- Believe B degrees: 10 4 4(avg 6)
+2014-05-16 08:43:05 - trial 8: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:05 - trial 8: simulation end  - # Believe A nodes: 43 - # Believe B nodes: 135 - # Neutral believe nodes: 22 - # Unset believe nodes: 0
+2014-05-16 08:43:05 - 
+2014-05-16 08:43:05 - trial 9: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 10 4 4 (avg 6)- Believe B degrees: 14 6 4(avg 8)
+2014-05-16 08:43:05 - trial 9: simulation complete with 37 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:05 - trial 9: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:05 - 
+2014-05-16 08:43:05 - trial 10: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 22 12 6 (avg 13)- Believe B degrees: 8 8 4(avg 6)
+2014-05-16 08:43:05 - trial 10: simulation complete with 21 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:05 - trial 10: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:05 - 
+2014-05-16 08:43:05 - trial 11: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 8 4 4 (avg 5)- Believe B degrees: 12 4 6(avg 7)
+2014-05-16 08:43:06 - trial 11: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:06 - trial 11: simulation end  - # Believe A nodes: 99 - # Believe B nodes: 77 - # Neutral believe nodes: 24 - # Unset believe nodes: 0
+2014-05-16 08:43:06 - 
+2014-05-16 08:43:06 - trial 12: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 4 6 (avg 5)- Believe B degrees: 16 10 4(avg 10)
+2014-05-16 08:43:06 - trial 12: simulation complete with 13 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:06 - trial 12: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:06 - 
+2014-05-16 08:43:06 - trial 13: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 16 6 6 (avg 9)- Believe B degrees: 22 8 4(avg 11)
+2014-05-16 08:43:06 - trial 13: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:06 - trial 13: simulation end  - # Believe A nodes: 66 - # Believe B nodes: 111 - # Neutral believe nodes: 23 - # Unset believe nodes: 0
+2014-05-16 08:43:06 - 
+2014-05-16 08:43:06 - trial 14: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 4 10 4 (avg 6)- Believe B degrees: 14 14 4(avg 10)
+2014-05-16 08:43:06 - trial 14: simulation complete with 15 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:06 - trial 14: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:06 - 
+2014-05-16 08:43:06 - trial 15: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 12 6 4 (avg 7)- Believe B degrees: 22 4 4(avg 10)
+2014-05-16 08:43:06 - trial 15: simulation complete with 15 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:06 - trial 15: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:06 - 
+2014-05-16 08:43:06 - trial 16: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 10 8 6 (avg 8)- Believe B degrees: 20 8 6(avg 11)
+2014-05-16 08:43:07 - trial 16: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:07 - trial 16: simulation end  - # Believe A nodes: 73 - # Believe B nodes: 111 - # Neutral believe nodes: 16 - # Unset believe nodes: 0
+2014-05-16 08:43:07 - 
+2014-05-16 08:43:07 - trial 17: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 16 4 6 (avg 8)- Believe B degrees: 6 10 4(avg 6)
+2014-05-16 08:43:07 - trial 17: simulation complete with 35 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:07 - trial 17: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:07 - 
+2014-05-16 08:43:07 - trial 18: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 4 6 (avg 5)- Believe B degrees: 16 6 8(avg 10)
+2014-05-16 08:43:07 - trial 18: simulation complete with 19 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:07 - trial 18: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:07 - 
+2014-05-16 08:43:07 - trial 19: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 4 4 (avg 4)- Believe B degrees: 12 10 6(avg 9)
+2014-05-16 08:43:07 - trial 19: simulation complete with 13 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:07 - trial 19: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:43:07 - 
+2014-05-16 08:43:07 - trial 20: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 10 6 4 (avg 6)- Believe B degrees: 10 8 6(avg 8)
+2014-05-16 08:43:08 - trial 20: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:43:08 - trial 20: simulation end  - # Believe A nodes: 107 - # Believe B nodes: 63 - # Neutral believe nodes: 30 - # Unset believe nodes: 0
+2014-05-16 08:46:23 - 
+2014-05-16 08:46:23 - going to run all simulations and trials. seed_a_start=1 seed_a_end=3 seed_b_start=1 seed_b_end=1 sim_pref_a_start=1.0 sim_pref_a_end=1.4 sim_pref_a_step=0.1 sim_pref_b_start=1.0 sim_pref_b_end=1.5 sim_pref_b_step=0.1
+2014-05-16 08:46:23 - 
+2014-05-16 08:46:23 - preparing to run 20 trials with seed_pref_a=1 seed_pref_b=1 sim_pref_a=1.0 sim_pref_b=1.0
+2014-05-16 08:46:23 - 
+2014-05-16 08:46:23 - trial 1: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 14 12 4 (avg 10)- Believe B degrees: 10 16 6(avg 10)
+2014-05-16 08:46:24 - trial 1: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:24 - trial 1: simulation end  - # Believe A nodes: 100 - # Believe B nodes: 79 - # Neutral believe nodes: 21 - # Unset believe nodes: 0
+2014-05-16 08:46:24 - 
+2014-05-16 08:46:24 - trial 2: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 6 4 (avg 5)- Believe B degrees: 20 14 4(avg 12)
+2014-05-16 08:46:24 - trial 2: simulation complete with 12 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:24 - trial 2: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:24 - 
+2014-05-16 08:46:24 - trial 3: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 8 8 4 (avg 6)- Believe B degrees: 26 6 4(avg 12)
+2014-05-16 08:46:24 - trial 3: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:24 - trial 3: simulation end  - # Believe A nodes: 44 - # Believe B nodes: 141 - # Neutral believe nodes: 15 - # Unset believe nodes: 0
+2014-05-16 08:46:24 - 
+2014-05-16 08:46:24 - trial 4: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 8 12 4 (avg 8)- Believe B degrees: 14 6 6(avg 8)
+2014-05-16 08:46:24 - trial 4: simulation complete with 19 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:24 - trial 4: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:24 - 
+2014-05-16 08:46:24 - trial 5: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 6 8 4 (avg 6)- Believe B degrees: 16 8 6(avg 10)
+2014-05-16 08:46:24 - trial 5: simulation complete with 14 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:24 - trial 5: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:24 - 
+2014-05-16 08:46:24 - trial 6: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 10 12 6 (avg 9)- Believe B degrees: 10 4 4(avg 6)
+2014-05-16 08:46:25 - trial 6: simulation complete with 32 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:25 - trial 6: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:25 - 
+2014-05-16 08:46:25 - trial 7: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 14 14 6 (avg 11)- Believe B degrees: 8 4 4(avg 5)
+2014-05-16 08:46:25 - trial 7: simulation complete with 18 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:25 - trial 7: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:25 - 
+2014-05-16 08:46:25 - trial 8: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 12 6 4 (avg 7)- Believe B degrees: 8 4 6(avg 6)
+2014-05-16 08:46:25 - trial 8: simulation complete with 28 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:25 - trial 8: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:25 - 
+2014-05-16 08:46:25 - trial 9: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 12 4 4 (avg 6)- Believe B degrees: 20 8 4(avg 10)
+2014-05-16 08:46:25 - trial 9: simulation complete with 11 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:25 - trial 9: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:25 - 
+2014-05-16 08:46:25 - trial 10: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 4 4 4 (avg 4)- Believe B degrees: 22 6 6(avg 11)
+2014-05-16 08:46:25 - trial 10: simulation complete with 8 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:25 - trial 10: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:25 - 
+2014-05-16 08:46:25 - trial 11: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 14 4 4 (avg 7)- Believe B degrees: 6 6 6(avg 6)
+2014-05-16 08:46:25 - trial 11: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:25 - trial 11: simulation end  - # Believe A nodes: 86 - # Believe B nodes: 92 - # Neutral believe nodes: 22 - # Unset believe nodes: 0
+2014-05-16 08:46:25 - 
+2014-05-16 08:46:25 - trial 12: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 8 4 6 (avg 6)- Believe B degrees: 6 4 4(avg 4)
+2014-05-16 08:46:26 - trial 12: simulation complete with 200 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 12: simulation end  - # Believe A nodes: 110 - # Believe B nodes: 72 - # Neutral believe nodes: 18 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 13: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 22 8 12 (avg 14)- Believe B degrees: 20 12 4(avg 12)
+2014-05-16 08:46:26 - trial 13: simulation complete with 38 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 13: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 14: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 4 6 6 (avg 5)- Believe B degrees: 10 12 4(avg 8)
+2014-05-16 08:46:26 - trial 14: simulation complete with 11 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 14: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 15: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 4 4 4 (avg 4)- Believe B degrees: 6 4 6(avg 5)
+2014-05-16 08:46:26 - trial 15: simulation complete with 21 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 15: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 16: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 8 6 6 (avg 6)- Believe B degrees: 6 4 4(avg 4)
+2014-05-16 08:46:26 - trial 16: simulation complete with 23 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 16: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 17: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 10 4 4 (avg 6)- Believe B degrees: 22 4 6(avg 10)
+2014-05-16 08:46:26 - trial 17: simulation complete with 14 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 17: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 18: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 16 4 6 (avg 8)- Believe B degrees: 14 8 4(avg 8)
+2014-05-16 08:46:26 - trial 18: simulation complete with 15 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 18: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 19: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 14 6 4 (avg 8)- Believe B degrees: 10 10 6(avg 8)
+2014-05-16 08:46:26 - trial 19: simulation complete with 35 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 19: simulation end  - # Believe A nodes: 0 - # Believe B nodes: 200 - # Neutral believe nodes: 0 - # Unset believe nodes: 0
+2014-05-16 08:46:26 - 
+2014-05-16 08:46:26 - trial 20: seeding complete, seed_pref_a=1, sim_pref_b=1- Believe A degrees: 16 16 12 (avg 14)- Believe B degrees: 10 4 4(avg 6)
+2014-05-16 08:46:26 - trial 20: simulation complete with 10 iterations, sim_pref_a=1.0, sim_pref_b=1.0
+2014-05-16 08:46:26 - trial 20: simulation end  - # Believe A nodes: 200 - # Believe B nodes: 0 - # Neutral believe nodes: 0 - # Unset believe nodes: 0

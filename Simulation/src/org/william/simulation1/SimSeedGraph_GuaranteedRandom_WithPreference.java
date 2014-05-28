@@ -22,8 +22,9 @@ public class SimSeedGraph_GuaranteedRandom_WithPreference extends GraphSeederBas
     }
     
     @Override
-    public void seedGraph_NoMessage() {
-        Random random = new Random();
+    public boolean seedGraph_NoMessage() {
+            Double preseed = new Double(java.lang.Math.random()*32768.0*32768.0);
+            Random random = new Random(preseed.longValue());
             int r;
             int r2;
             int r_degree;
@@ -66,6 +67,7 @@ public class SimSeedGraph_GuaranteedRandom_WithPreference extends GraphSeederBas
                 setBelieve(nodesArray[r],new Believe(Believe.believe_B));
                 done_set_B++;
             }
+        return true;
     }
-        
+    
 }

@@ -14,7 +14,7 @@ import org.gephi.graph.api.Edge;
 public class RunSimulationStep_CountWithoutLinkBack extends RunningSimulationBase {
     
     @Override
-    public Believe calculateNewBelieveForNode(Node node) {
+    public Believe calculateNewBeliefForNode(Node node) {
         Double believeA_count=0.0;
         Double believeB_count=0.0;
         int num_believes_set=0;
@@ -60,4 +60,9 @@ public class RunSimulationStep_CountWithoutLinkBack extends RunningSimulationBas
         }
         return getCurrentBelieve(node);
     }
+    
+    @Override
+    public void updatePayoffs() {
+    }
+
 }

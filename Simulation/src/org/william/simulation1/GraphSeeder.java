@@ -10,5 +10,5 @@ package org.william.simulation1;
  */
 public interface GraphSeeder {
     public void seedGraph();
-    public void seedGraph_NoMessage();
+    public boolean seedGraph_NoMessage();
 }

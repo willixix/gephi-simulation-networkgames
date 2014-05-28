@@ -60,6 +60,12 @@ public class SimPrepareGraph extends SimBase {
                   if (a.getValue(believeAttributeLastTime)== null) {
                        a.setValue(believeAttributeLastTime, new Integer(Believe.believe_unset));
                   }
+                  if (a.getValue(payoffAttribute)== null) {
+                       a.setValue(payoffAttribute, new Double(0.0));
+                  }
+                  if (a.getValue(payoffAttributeLastTime)== null) {
+                       a.setValue(payoffAttributeLastTime, new Double(0.0));
+                  }
             }
             // Now need to add proper attributes if they are not there
             for(Edge edge : graph.getEdges().toArray()) {
@@ -80,8 +86,8 @@ public class SimPrepareGraph extends SimBase {
                     "Self-Loops Removed: "+edges_removed_selfloop+"\n"+
                     "Mutual-Edges Added: "+edges_added+"\n"+
                     "Edges Reset to Directed: "+edges_converted_directed+"\n"+
-                    "Believe_Value added to: "+edges_added_attributes+" edges\n"+
-                    "Reputation_Value added to: "+nodes_added_attributes+" nodes\n\n"+
+                    "Belief & Payoff Value added to: "+nodes_added_attributes+" nodes\n"+
+                    "Reputation Default Value added to: "+edges_added_attributes+" edges\n\n"+
                     "Total Nodes: "+graph.getNodeCount()+"\n"+
                     "Total Edges: "+graph.getEdgeCount()+"\n";
             NotifyDescriptor d = new NotifyDescriptor.Message(display_text, NotifyDescriptor.INFORMATION_MESSAGE);

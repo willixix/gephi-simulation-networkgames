@@ -18,7 +18,7 @@ public class SimSeedGraph_ProbablisticRandom extends GraphSeederBase {
     }
     
     @Override
-    public void seedGraph_NoMessage() {
+    public boolean seedGraph_NoMessage() {
             Random random = new Random();
             int total_nodes = graph.getNodeCount();
             double prob_seed_A = (new Integer(num_to_seed_A)).doubleValue() / (new Integer(total_nodes)).doubleValue();
@@ -42,6 +42,7 @@ public class SimSeedGraph_ProbablisticRandom extends GraphSeederBase {
                         }
                   }
             }
+            return true;
     }
     
 }

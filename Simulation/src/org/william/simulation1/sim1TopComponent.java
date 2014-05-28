@@ -33,12 +33,39 @@ String FileName_Results_Detailed = "simgraph_results_detailed.txt";
 String FileName_Results_Short = "simgraph_results.txt";
     
     public sim1TopComponent() {
+        String[] AlgorithmNames = new String[] { 
+                "AllNeighborsEqual", "AllNeighborsNoNeutral",
+                "CountWithoutLinkBack", 
+                "CoordinationGame2_AB", "CoordinationGame3_ABN"                
+        };
         initComponents();
         setName(NbBundle.getMessage(sim1TopComponent.class, "CTL_sim1TopComponent"));
         setToolTipText(NbBundle.getMessage(sim1TopComponent.class, "HINT_sim1TopComponent"));
         putClientProperty(TopComponent.PROP_UNDOCKING_DISABLED, Boolean.TRUE);
         putClientProperty(TopComponent.PROP_MAXIMIZATION_DISABLED, Boolean.TRUE);
         putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
+        Simulation_Algrorithm.setModel(new javax.swing.DefaultComboBoxModel(AlgorithmNames));
+    }
+
+    private RunableSimulation selectRunningAlgorithm() {
+        RunableSimulation runner = null;
+        String selected_algorithm = (String)Simulation_Algrorithm.getSelectedItem();
+        if (selected_algorithm.equals("AllNeighborsEqual")) {
+            runner = new RunSimulationStep_AllNeighborsSame();
+        }
+        if (selected_algorithm.equals("AllNeighborsNoNeutral")) {
+            runner = new RunSimulationStep_AllNeighborsSame_NoNeutral();
+        }
+        else if (selected_algorithm.equals("CountWithoutLinkBack")) {
+            runner = new RunSimulationStep_CountWithoutLinkBack();
+        }
+        else if (selected_algorithm.equals("CoordinationGame2_AB")) {
+            runner = new RunSimulationStep_CoordinationGame_TwoStrategies();
+        }
+        else if (selected_algorithm.equals("CoordinationGame3_ABN")) {
+            runner = new RunSimulationStep_CoordinationGame_ThreeStrategies();
+        }
+        return runner;
     }
 
     /** This method is called from within the constructor to
@@ -544,24 +571,18 @@ private void Correct_BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
  // this is a radio button, no need to do anything
 }//GEN-LAST:event_Correct_BActionPerformed
 
-
 // This function runs simulation (opinion spreading to neighbors)
 private void Button_RunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RunActionPerformed
     RunableSimulation runner = null;
     String selected_algorithm = (String)Simulation_Algrorithm.getSelectedItem();
     String num_iterations_str = (String)NumSimulations.getSelectedItem();
     Integer num_iterations = new Integer(num_iterations_str);
-    String num_iterations_completed_str = (String)IterationsCompleted.getText();
+    String num_iterations_completed_str = IterationsCompleted.getText();
     Integer num_iterations_completed = new Integer(num_iterations_completed_str);
-    Double sim_preference_a = new Double((String)Simulation_Preference_A.getText());
-    Double sim_preference_b = new Double((String)Simulation_Preference_B.getText());
-    
-    if (selected_algorithm.equals("AllNeighborsEqual")) {
-        runner = new RunSimulationStep_AllNeighborsSame();
-    }
-    if (selected_algorithm.equals("CountWithoutLinkBack")) {
-        runner = new RunSimulationStep_CountWithoutLinkBack();
-    }
+    Double sim_preference_a = new Double(Simulation_Preference_A.getText());
+    Double sim_preference_b = new Double(Simulation_Preference_B.getText());
+
+    runner = selectRunningAlgorithm();
     if (runner!=null) {
         runner.runSimulation(num_iterations.intValue(),
                 sim_preference_a.doubleValue(), sim_preference_b.doubleValue());
@@ -607,14 +628,14 @@ private GraphSeeder prepare_for_seeding(Integer[] num_seed) {
     String strnum_seed_A = null;
     String strnum_seed_B = null;
     String selected_algorithm = (String)Seeding_Algorithm.getSelectedItem();
-    String seed_centrality_multiplier_a_str = (String)Seeding_Centrality_Multiplier_A.getText();
-    String seed_centrality_multiplier_b_str = (String)Seeding_Centrality_Multiplier_B.getText();
+    String seed_centrality_multiplier_a_str = Seeding_Centrality_Multiplier_A.getText();
+    String seed_centrality_multiplier_b_str = Seeding_Centrality_Multiplier_B.getText();
     Integer seed_centrality_multiplier_a = new Integer(1);
     Integer seed_centrality_multiplier_b = new Integer(1);
 
     if (TextBox_Num_A.getText()!=null && TextBox_Num_B.getText()!=null) {
-        strnum_seed_A = (String)TextBox_Num_A.getText();
-        strnum_seed_B = (String)TextBox_Num_B.getText();
+        strnum_seed_A = TextBox_Num_A.getText();
+        strnum_seed_B = TextBox_Num_B.getText();
     }
     if (strnum_seed_A != null && strnum_seed_B != null) {
         num_seed_A = new Integer(strnum_seed_A);
@@ -638,7 +659,7 @@ private GraphSeeder prepare_for_seeding(Integer[] num_seed) {
         }
         if (selected_algorithm.equals("GuaranteedCentralitySeeding")) {
             runner = new SimSeedGraph_GuaranteedRandom_WithPreference(num_seed_A.intValue(),num_seed_B.intValue(),
-                    seed_centrality_multiplier_a.intValue(),seed_centrality_multiplier_a.intValue());
+                    seed_centrality_multiplier_a.intValue(),seed_centrality_multiplier_b.intValue());
         }
     }
     return runner;
@@ -686,22 +707,16 @@ private void Button_RunIndependentTrialsActionPerformed(java.awt.event.ActionEve
     Integer[] num_seed = new Integer[4];
     String selected_algorithm = (String)Simulation_Algrorithm.getSelectedItem();
     Integer max_iterations = new Integer((String)NumSimulations.getSelectedItem());
-    Integer num_iterations_completed = new Integer((String)IterationsCompleted.getText());
-    Double sim_preference_a = new Double((String)Simulation_Preference_A.getText());
-    Double sim_preference_b = new Double((String)Simulation_Preference_B.getText());
+    Integer num_iterations_completed = new Integer(IterationsCompleted.getText());
+    Double sim_preference_a = new Double(Simulation_Preference_A.getText());
+    Double sim_preference_b = new Double(Simulation_Preference_B.getText());
     progressMessageWindow progressWindow = null;
     
     seeder = prepare_for_seeding(num_seed);
+    runner = selectRunningAlgorithm();
     
-    if (selected_algorithm.equals("AllNeighborsEqual")) {
-        runner = new RunSimulationStep_AllNeighborsSame();
-    }
-    if (selected_algorithm.equals("CountWithoutLinkBack")) {
-        runner = new RunSimulationStep_CountWithoutLinkBack();
-    }
-
     if (runner!=null && seeder!=null) {
-        Integer num_trials = new Integer((String)Num_IndependentTrials.getText());
+        Integer num_trials = new Integer(Num_IndependentTrials.getText());
         int num_total_trials_ran = 0;
         int seed_a_start = num_seed[2].intValue();
         int seed_a_end = seed_a_start;
@@ -752,7 +767,17 @@ private void Button_RunIndependentTrialsActionPerformed(java.awt.event.ActionEve
                 sim_pref_b_step=(sim_pref_b_end-sim_pref_b_start)/10.0;
             }
         }
+        
         LoggerWriter log = new LoggerWriter(FileName_Log, FileName_Results_Detailed, FileName_Results_Short);
+        if (log.start()) {
+            log.log("");
+            log.log("going to run all simulations and trials. seed_a_start="+seed_a_start+" seed_a_end="+seed_a_end+
+                " seed_b_start="+seed_b_start+" seed_b_end="+seed_b_end+
+                " sim_pref_a_start="+sim_pref_a_start+" sim_pref_a_end="+sim_pref_a_end+" sim_pref_a_step="+sim_pref_a_step+
+                " sim_pref_b_start="+sim_pref_b_start+" sim_pref_b_end="+sim_pref_b_end+" sim_pref_b_step="+sim_pref_b_step);
+            log.stop();
+        }
+                
         for (int seed_a=seed_a_start; seed_a<=seed_a_end; seed_a++) {
             for (int seed_b=seed_b_start; seed_b<=seed_b_end; seed_b++) {
                 if (progressWindow != null) {
@@ -769,6 +794,9 @@ private void Button_RunIndependentTrialsActionPerformed(java.awt.event.ActionEve
                             num_seed[0].intValue(), num_seed[1].intValue(), seed_a, seed_b,
                             max_iterations.intValue(), sim_pref_a, sim_pref_b);
                         if (log.start()) {
+                            log.log("");
+                            log.log("preparing to run "+num_trials+" trials with seed_pref_a="+seed_a+" seed_pref_b="+seed_b+" sim_pref_a="+sim_pref_a+" sim_pref_b="+sim_pref_b);
+                            
                             runmany.execute(num_trials.intValue(), log);
                             if (progressWindow!=null) {
                                 progressWindow.setResults(log.getLastLines_shortresults(50));
@@ -777,13 +805,13 @@ private void Button_RunIndependentTrialsActionPerformed(java.awt.event.ActionEve
                             log.stop();
                         }
                         num_total_trials_ran += num_trials.intValue();
-                        while (progressWindow!=null && !progressWindow.endRequested() && progressWindow.isPaused()) {
+                        /* while (progressWindow!=null && !progressWindow.endRequested() && progressWindow.isPaused()) {
                             try {
                                 Thread.sleep(1000);
                             } catch(InterruptedException ex) {
                                 Thread.currentThread().interrupt();
                             }
-                        }
+                        } */
                     }
                 }
             }

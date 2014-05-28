@@ -60,6 +60,14 @@ public class Believe extends Object {
           return believe_unknown;
     }
    
+    public int getGameStrategyNumber() {
+        if (believe == believe_A) return 1;
+        if (believe == believe_B) return 2;
+        if (believe == believe_neutral) return 3;
+        if (believe == believe_unset) return 0;
+        return 0;
+    }
+    
     public Integer getIntegerValue() {
         return new Integer(getNumericValue());
     }

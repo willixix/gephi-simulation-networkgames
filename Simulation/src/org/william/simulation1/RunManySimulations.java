@@ -55,6 +55,9 @@ public class RunManySimulations extends SimBase {
         int alltrials_avg_numiterations_a = 0;
         int alltrials_avg_numiterations_b = 0;
         int alltrials_avg_numiterations_both_ab = 0;
+        int alltrials_avg_numend_a = 0;
+        int alltrials_avg_numend_b = 0;
+        int alltrials_avg_numend_neutral = 0;
         
         if (max_iterations<10) {
             max_iterations = 200;
@@ -84,6 +87,12 @@ public class RunManySimulations extends SimBase {
             
             int end_num_a = countBelieveNodes(Believe.Believe_A);
             int end_num_b = countBelieveNodes(Believe.Believe_B);
+            int end_num_neutral = countBelieveNodes(Believe.Believe_Neutral);
+            
+            alltrials_avg_numend_a += end_num_a;
+            alltrials_avg_numend_b += end_num_b;
+            alltrials_avg_numend_neutral += end_num_neutral;
+            
             if (end_num_b == 0 || (end_num_a/end_num_b) >= win_ratio) {
                 alltrials_end_a++;
                 alltrials_avg_numiterations_a += iterations_completed;
@@ -105,7 +114,7 @@ public class RunManySimulations extends SimBase {
                              String.format("%.2f, %.2f, ", run_preference_a, run_preference_b)+
                              iterations_completed+","+
                              end_num_a+","+end_num_b+"\n";
-            logwriter.output_results(results, true);
+            logwriter.output_results(results, true); // to detailed results file since true
             
             SimFinalize_CalculateReputation finalizer = new SimFinalize_CalculateReputation();
             finalizer.clearAllBelievesToUnset();
@@ -117,9 +126,12 @@ public class RunManySimulations extends SimBase {
         alltrials_avg_edgecount = alltrials_avg_edgecount / num_trials;
         alltrials_avg_start_a = alltrials_avg_start_a / num_trials;
         alltrials_avg_start_b = alltrials_avg_start_b / num_trials;
-        alltrials_avg_numiterations_a = alltrials_avg_numiterations_a / alltrials_end_a;
-        alltrials_avg_numiterations_b = alltrials_avg_numiterations_b / alltrials_end_b;
-        alltrials_avg_numiterations_both_ab = alltrials_avg_numiterations_both_ab / alltrials_end_both_ab;
+        alltrials_avg_numend_a = alltrials_avg_numend_a / num_trials;
+        alltrials_avg_numend_b = alltrials_avg_numend_b / num_trials;
+        alltrials_avg_numend_neutral = alltrials_avg_numend_neutral / num_trials;
+        if (alltrials_end_a!=0) { alltrials_avg_numiterations_a = alltrials_avg_numiterations_a / alltrials_end_a; }
+        if (alltrials_end_b!=0) { alltrials_avg_numiterations_b = alltrials_avg_numiterations_b / alltrials_end_b; }
+        if (alltrials_end_both_ab!=0) { alltrials_avg_numiterations_both_ab = alltrials_avg_numiterations_both_ab / alltrials_end_both_ab; }
         String results = logwriter.get_date_longnum()+","+
                              alltrials_avg_nodecount+","+alltrials_avg_edgecount+","+
                              alltrials_avg_start_a+","+alltrials_avg_start_b+","+
@@ -128,8 +140,10 @@ public class RunManySimulations extends SimBase {
                              String.format("%.2f,%.2f,", run_preference_a, run_preference_b)+
                              alltrials_end_a+","+alltrials_end_b+","+alltrials_end_both_ab+","+
                              alltrials_avg_numiterations_a+","+alltrials_avg_numiterations_b+","+
-                             alltrials_avg_numiterations_both_ab+"\n";
-        logwriter.output_results(results, false);
+                             alltrials_avg_numiterations_both_ab+","+
+                             alltrials_avg_numend_a+","+alltrials_avg_numend_b+","+
+                             alltrials_avg_numend_neutral+"\n";
+        logwriter.output_results(results, false); // to brief results file since false
     }
     
 }
