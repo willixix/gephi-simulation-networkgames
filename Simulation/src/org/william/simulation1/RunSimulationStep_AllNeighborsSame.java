@@ -22,6 +22,7 @@ public class RunSimulationStep_AllNeighborsSame extends RunningSimulationBase {
             for (Edge edge : graph.getEdges(node).toArray()) {
                  Node neighbor = edge.getTarget();
                  Believe p = getLastBelieve(neighbor);
+                 // Believe p = getCurrentBelieve(neighbor);
                  // Edge edge_back = graph.getEdge(neighbor, node);
                  if (p!=null && neighbor!=node) {
                      if (p.isBelieveSet()) {

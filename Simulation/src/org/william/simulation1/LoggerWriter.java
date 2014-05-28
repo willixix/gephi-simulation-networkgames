@@ -24,6 +24,9 @@ public class LoggerWriter {
     Writer log_writer = null;
     Writer results_writer_detailed = null;
     Writer results_writer_short = null;
+    FixedSizeQueueStringWriter logger_fulllog = null;
+    FixedSizeQueueStringWriter logger_shortresults = null;
+    FixedSizeQueueStringWriter logger_fullresults = null;
 
     LoggerWriter(String log_filename_in, String results1_filename_in, String results2_filename_in) {
         log_filename = log_filename_in;
@@ -50,6 +53,10 @@ public class LoggerWriter {
                 return false;
             }
         }
+        logger_fulllog = new FixedSizeQueueStringWriter();
+        logger_shortresults = new FixedSizeQueueStringWriter();
+        logger_fullresults = new FixedSizeQueueStringWriter();
+        
         return true;
     }
     
@@ -80,12 +87,14 @@ public class LoggerWriter {
             System.err.println("Problem opening file "+filename);
         }
         return null;
-    }        
+    }
     
     public void log(String text) {
         try {
             if (log_writer!=null) {
                 log_writer.write(get_date_string()+" - "+text+"\n");
+                logger_fulllog.write(text);
+                logger_fulllog.newline();
             }
         } catch (IOException e) {
             System.err.println("Problem writing to file "+log_filename);
@@ -96,9 +105,11 @@ public class LoggerWriter {
         try {
             if (detailed && results_writer_detailed!=null) {
                 results_writer_detailed.write(text);
+                logger_fullresults.write(text);
             }
             if (!detailed && results_writer_short!=null) {
                 results_writer_short.write(text);
+                logger_shortresults.write(text);
             }
         } catch (IOException e) {
             if (detailed) {
@@ -120,6 +131,18 @@ public class LoggerWriter {
        // Instantiate a Date object
        SimpleDateFormat ft = new SimpleDateFormat ("yyyyMMddhhmmss");
        return ft.format(new Date());
+    }
+    
+    public String getLastLines_log(int n) { 
+        return logger_fulllog.getLastLines(n);
+    }
+    
+    public String getLastLines_fullresults(int n) { 
+        return logger_fullresults.getLastLines(n);
+    }
+    
+    public String getLastLines_shortresults(int n) { 
+        return logger_shortresults.getLastLines(n);
     }
 
 }

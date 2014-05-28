@@ -9,6 +9,10 @@
                     <!--org.william.simulation1.sim1TopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//org.william.simulation1//sim1//EN"/>
                 </file>
+                <file name="progress" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--org.william.simulation1.progressMessageWindow-->
+                    <attr name="hint.originalPublicID" stringvalue="-//org.william.simulation1//progress//EN"/>
+                </file>
             </folder>
         </folder>
         <folder name="memory">
@@ -18,6 +22,10 @@
                         <file name="sim1TopComponent">
                             <!--org.william.simulation1.sim1TopComponent-->
                             <attr name="settings.providerPath" stringvalue="xml/lookups//org_william_simulation1/sim1.instance"/>
+                        </file>
+                        <file name="progressMessageWindow">
+                            <!--org.william.simulation1.progressMessageWindow-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//org_william_simulation1/progress.instance"/>
                         </file>
                     </folder>
                 </folder>
@@ -35,6 +43,16 @@
                     <attr name="settings.instanceOf" stringvalue="org.william.simulation1.sim1TopComponent"/>
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
+                <file name="progress.instance">
+                    <!--org.william.simulation1.progressMessageWindow-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="org.william.simulation1.progressMessageWindow"/>
+                    <attr name="settings.instanceOf" stringvalue="org.william.simulation1.progressMessageWindow"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
             </folder>
         </folder>
     </folder>
@@ -43,6 +61,10 @@
             <file name="org-william-simulation1-sim1TopComponent.shadow">
                 <!--org.william.simulation1.sim1TopComponent-->
                 <attr name="originalFile" stringvalue="Actions/Window/org-william-simulation1-sim1TopComponent.instance"/>
+            </file>
+            <file name="org-william-simulation1-progressTopComponent.shadow">
+                <!--org.william.simulation1.progressMessageWindow-->
+                <attr name="originalFile" stringvalue="Actions/Window/org-william-simulation1-progressTopComponent.instance"/>
             </file>
         </folder>
     </folder>
@@ -53,6 +75,13 @@
 <!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
 <settings version="1.0">
   <instance class="org.william.simulation1.sim1TopComponent"/>
+</settings>
+]]></file>
+            <file name="progressTopComponent.settings">
+                <!--org.william.simulation1.progressMessageWindow--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="org.william.simulation1.progressMessageWindow"/>
 </settings>
 ]]></file>
         </folder>
@@ -67,6 +96,20 @@
 </tc-ref>
 ]]></file>
             </folder>
+            <folder name="Expression MODE is undefined on line 28, column 38 in Templates">
+                <folder name="NetBeansModuleDevelopment-files">
+                    <folder name="templateTopComponent637.java.">
+                        <file name="progressTopComponent.wstcref">
+                            <!--org.william.simulation1.progressMessageWindow--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="progressTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                    </folder>
+                </folder>
+            </folder>
         </folder>
     </folder>
     <folder name="Actions">
@@ -79,6 +122,15 @@
                 <attr name="preferredID" stringvalue="sim1TopComponent"/>
                 <attr
                     bundlevalue="org.william.simulation1.Bundle#CTL_sim1Action" name="displayName"/>
+            </file>
+            <file name="org-william-simulation1-progressTopComponent.instance">
+                <!--org.william.simulation1.progressMessageWindow-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="org.william.simulation1.progressMessageWindow"/>
+                <attr name="preferredID" stringvalue="progressTopComponent"/>
+                <attr
+                    bundlevalue="org.william.simulation1.Bundle#CTL_progressAction" name="displayName"/>
             </file>
         </folder>
     </folder>

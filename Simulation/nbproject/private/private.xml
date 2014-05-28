@@ -1,3 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/Believe.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/RunSimulationStep_AllNeighborsSame.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/GraphSeeder.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/RunningSimulationBase.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/SimBase.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/RunSimulationStep_CountWithoutLinkBack.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/RunableSimulation.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/SimFinalize_CalculateReputation.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/SimPrepareGraph.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/SimSeedGraph_ProbablisticRandom.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/SimSeedGraph_GuaranteedRandom_WithPreference.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/SimSeedGraph_GuaranteedRandom.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/RunManySimulations.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/LoggerWriter.java</file>
+        <file>file:/home/william/graph/gephi/wiliams-graph-research-reputation/Simulation/src/org/william/simulation1/org.william.simulation1.properties</file>
+    </open-files>
 </project-private>

@@ -23,6 +23,7 @@ public class RunSimulationStep_CountWithoutLinkBack extends RunningSimulationBas
                  Node neighbor = edge.getTarget();
                  if (neighbor!=node) {
                     Believe p = getLastBelieve(neighbor);
+                    // Believe p = getCurrentBelieve(neighbor);
                     int neighbor_edgecount = 0;
                     for (Edge neighbor_edge: graph.getEdges(neighbor).toArray()) {
                         if (neighbor_edge.getTarget()!=neighbor) {

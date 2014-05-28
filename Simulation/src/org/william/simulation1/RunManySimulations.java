@@ -13,6 +13,7 @@ import java.util.Date;
 // TODO: support doing simulation over range of preference and seed_centrality parameters
 
 public class RunManySimulations extends SimBase {
+    private final int win_ratio = 10; // When there are 10x more A than B its same as "only A" 
     private double run_preference_a = 1.0;
     private double run_preference_b = 1.0;
     private int seed_pref_a = 1;
@@ -51,6 +52,9 @@ public class RunManySimulations extends SimBase {
         int alltrials_avg_edgecount = 0;
         int alltrials_avg_start_a = 0;
         int alltrials_avg_start_b = 0;
+        int alltrials_avg_numiterations_a = 0;
+        int alltrials_avg_numiterations_b = 0;
+        int alltrials_avg_numiterations_both_ab = 0;
         
         if (max_iterations<10) {
             max_iterations = 200;
@@ -80,15 +84,19 @@ public class RunManySimulations extends SimBase {
             
             int end_num_a = countBelieveNodes(Believe.Believe_A);
             int end_num_b = countBelieveNodes(Believe.Believe_B);
-            if (end_num_b == 0 || (end_num_a/end_num_b) >= 10) {
+            if (end_num_b == 0 || (end_num_a/end_num_b) >= win_ratio) {
                 alltrials_end_a++;
+                alltrials_avg_numiterations_a += iterations_completed;
             }
-            else if (end_num_a == 0 || (end_num_b/end_num_a) >= 10) {
+            else if (end_num_a == 0 || (end_num_b/end_num_a) >= win_ratio) {
                 alltrials_end_b++;
+                alltrials_avg_numiterations_b += iterations_completed;
             }
             else {
                 alltrials_end_both_ab++;
+                alltrials_avg_numiterations_both_ab += iterations_completed;
             }
+                    
             String results = logwriter.get_date_longnum()+","+
                              graph.getNodeCount()+","+graph.getEdgeCount()+","+
                              start_num_a+","+start_num_b+","+
@@ -109,13 +117,18 @@ public class RunManySimulations extends SimBase {
         alltrials_avg_edgecount = alltrials_avg_edgecount / num_trials;
         alltrials_avg_start_a = alltrials_avg_start_a / num_trials;
         alltrials_avg_start_b = alltrials_avg_start_b / num_trials;
+        alltrials_avg_numiterations_a = alltrials_avg_numiterations_a / alltrials_end_a;
+        alltrials_avg_numiterations_b = alltrials_avg_numiterations_b / alltrials_end_b;
+        alltrials_avg_numiterations_both_ab = alltrials_avg_numiterations_both_ab / alltrials_end_both_ab;
         String results = logwriter.get_date_longnum()+","+
                              alltrials_avg_nodecount+","+alltrials_avg_edgecount+","+
                              alltrials_avg_start_a+","+alltrials_avg_start_b+","+
                              seed_pref_a+","+seed_pref_b+","+
                              alltrials_start_avgdegree_a+","+alltrials_start_avgdegree_b+","+
                              String.format("%.2f,%.2f,", run_preference_a, run_preference_b)+
-                             alltrials_end_a+","+alltrials_end_b+","+alltrials_end_both_ab+"\n";
+                             alltrials_end_a+","+alltrials_end_b+","+alltrials_end_both_ab+","+
+                             alltrials_avg_numiterations_a+","+alltrials_avg_numiterations_b+","+
+                             alltrials_avg_numiterations_both_ab+"\n";
         logwriter.output_results(results, false);
     }
     
