@@ -15,32 +15,32 @@ import org.openide.NotifyDescriptor;
 /**
  * Top component which displays something.
  */
-@ConvertAsProperties(dtd = "-//org.william.simulation1//sim1//EN",
+@ConvertAsProperties(dtd = "-//org.leibzon.simnetgames//sim1//EN",
 autostore = false)
-@TopComponent.Description(preferredID = "sim1TopComponent",
+@TopComponent.Description(preferredID = "simMainPanel",
 //iconBase="SET/PATH/TO/ICON/HERE", 
 persistenceType = TopComponent.PERSISTENCE_ALWAYS)
 @TopComponent.Registration(mode = "filtersmode", openAtStartup = true)
-@ActionID(category = "Window", id = "org.william.simulation1.sim1TopComponent")
+@ActionID(category = "Window", id = "org.leibzo.simnetgames.simMainPanel")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(displayName = "#CTL_sim1Action",
-preferredID = "sim1TopComponent")
+preferredID = "simMainPanel")
 
-public final class sim1TopComponent extends TopComponent {
+public final class simMainPanel extends TopComponent {
 
 String FileName_Log = "simgraph.log";
 String FileName_Results_Detailed = "simgraph_results_detailed.txt";
 String FileName_Results_Short = "simgraph_results.txt";
     
-    public sim1TopComponent() {
+    public simMainPanel() {
         String[] AlgorithmNames = new String[] { 
                 "AllNeighborsEqual", "AllNeighborsNoNeutral",
                 "CountWithoutLinkBack", 
                 "CoordinationGame2_AB", "CoordinationGame3_ABN"                
         };
         initComponents();
-        setName(NbBundle.getMessage(sim1TopComponent.class, "CTL_sim1TopComponent"));
-        setToolTipText(NbBundle.getMessage(sim1TopComponent.class, "HINT_sim1TopComponent"));
+        setName(NbBundle.getMessage(simMainPanel.class, "CTL_sim1TopComponent"));
+        setToolTipText(NbBundle.getMessage(simMainPanel.class, "HINT_sim1TopComponent"));
         putClientProperty(TopComponent.PROP_UNDOCKING_DISABLED, Boolean.TRUE);
         putClientProperty(TopComponent.PROP_MAXIMIZATION_DISABLED, Boolean.TRUE);
         putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
@@ -128,7 +128,7 @@ String FileName_Results_Short = "simgraph_results.txt";
 
         setAutoscrolls(true);
 
-        org.openide.awt.Mnemonics.setLocalizedText(Button_Prepare, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Button_Prepare.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Button_Prepare, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Button_Prepare.text")); // NOI18N
         Button_Prepare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_PrepareActionPerformed(evt);
@@ -137,7 +137,7 @@ String FileName_Results_Short = "simgraph_results.txt";
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        org.openide.awt.Mnemonics.setLocalizedText(Button_Seed, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Button_Seed.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Button_Seed, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Button_Seed.text")); // NOI18N
         Button_Seed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_SeedActionPerformed(evt);
@@ -151,41 +151,41 @@ String FileName_Results_Short = "simgraph_results.txt";
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel2.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel2.text")); // NOI18N
 
-        TextBox_Num_A.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.TextBox_Num_A.text")); // NOI18N
+        TextBox_Num_A.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.TextBox_Num_A.text")); // NOI18N
         TextBox_Num_A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextBox_Num_AActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel3.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel3.text")); // NOI18N
 
-        TextBox_Num_B.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.TextBox_Num_B.text")); // NOI18N
+        TextBox_Num_B.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.TextBox_Num_B.text")); // NOI18N
 
-        Seeding_Centrality_Multiplier_A.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Seeding_Centrality_Multiplier_A.text")); // NOI18N
+        Seeding_Centrality_Multiplier_A.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Seeding_Centrality_Multiplier_A.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel5.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel5.text")); // NOI18N
 
-        Seeding_Centrality_Multiplier_B.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Seeding_Centrality_Multiplier_B.text")); // NOI18N
+        Seeding_Centrality_Multiplier_B.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Seeding_Centrality_Multiplier_B.text")); // NOI18N
         Seeding_Centrality_Multiplier_B.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Seeding_Centrality_Multiplier_BActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel6.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel6.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel7.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel7.text")); // NOI18N
 
-        Seeding_Centrality_Multiplier_A_last.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Seeding_Centrality_Multiplier_A_last.text")); // NOI18N
+        Seeding_Centrality_Multiplier_A_last.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Seeding_Centrality_Multiplier_A_last.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel11, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel11.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel11, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel11.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel12, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel12.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel12, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel12.text")); // NOI18N
 
-        Seeding_Centrality_Multiplier_B_last.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Seeding_Centrality_Multiplier_B_last.text")); // NOI18N
+        Seeding_Centrality_Multiplier_B_last.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Seeding_Centrality_Multiplier_B_last.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -258,7 +258,7 @@ String FileName_Results_Short = "simgraph_results.txt";
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        org.openide.awt.Mnemonics.setLocalizedText(Button_Run, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Button_Run.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Button_Run, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Button_Run.text")); // NOI18N
         Button_Run.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_RunActionPerformed(evt);
@@ -272,7 +272,7 @@ String FileName_Results_Short = "simgraph_results.txt";
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel1.text")); // NOI18N
 
         Simulation_Algrorithm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AllNeighborsEqual", "CountWithoutLinkBack" }));
         Simulation_Algrorithm.addActionListener(new java.awt.event.ActionListener() {
@@ -281,34 +281,34 @@ String FileName_Results_Short = "simgraph_results.txt";
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel4.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel4.text")); // NOI18N
 
         IterationsCompleted.setBackground(new java.awt.Color(-1,true));
-        org.openide.awt.Mnemonics.setLocalizedText(IterationsCompleted, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.IterationsCompleted.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(IterationsCompleted, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.IterationsCompleted.text")); // NOI18N
 
-        Simulation_Preference_A.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Simulation_Preference_A.text")); // NOI18N
+        Simulation_Preference_A.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Simulation_Preference_A.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel8.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel8.text")); // NOI18N
 
-        Simulation_Preference_B.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Simulation_Preference_B.text")); // NOI18N
+        Simulation_Preference_B.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Simulation_Preference_B.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel10, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel10.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel10, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel10.text")); // NOI18N
 
-        Simulation_Preference_A_step.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Simulation_Preference_A_step.text")); // NOI18N
+        Simulation_Preference_A_step.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Simulation_Preference_A_step.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel13.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel13.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel14, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel14.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel14, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel14.text")); // NOI18N
 
-        Simulation_Preference_B_step.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Simulation_Preference_B_step.text")); // NOI18N
+        Simulation_Preference_B_step.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Simulation_Preference_B_step.text")); // NOI18N
 
-        Simulation_Preference_A_last.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Simulation_Preference_A_last.text")); // NOI18N
+        Simulation_Preference_A_last.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Simulation_Preference_A_last.text")); // NOI18N
 
-        Simulation_Preference_B_last.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Simulation_Preference_B_last.text")); // NOI18N
+        Simulation_Preference_B_last.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Simulation_Preference_B_last.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel16, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel16.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel16, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel16.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel17, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel17.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel17, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel17.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -397,7 +397,7 @@ String FileName_Results_Short = "simgraph_results.txt";
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        org.openide.awt.Mnemonics.setLocalizedText(Button_End_CalculateReputation, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Button_End_CalculateReputation.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Button_End_CalculateReputation, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Button_End_CalculateReputation.text")); // NOI18N
         Button_End_CalculateReputation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_End_CalculateReputationActionPerformed(evt);
@@ -406,7 +406,7 @@ String FileName_Results_Short = "simgraph_results.txt";
 
         Group_Correct.add(Correct_A);
         Correct_A.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(Correct_A, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Correct_A.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Correct_A, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Correct_A.text")); // NOI18N
         Correct_A.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Correct_AActionPerformed(evt);
@@ -414,14 +414,14 @@ String FileName_Results_Short = "simgraph_results.txt";
         });
 
         Group_Correct.add(Correct_B);
-        org.openide.awt.Mnemonics.setLocalizedText(Correct_B, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Correct_B.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Correct_B, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Correct_B.text")); // NOI18N
         Correct_B.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Correct_BActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(Button_EndOnly, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Button_EndOnly.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Button_EndOnly, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Button_EndOnly.text")); // NOI18N
         Button_EndOnly.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_EndOnlyActionPerformed(evt);
@@ -463,21 +463,21 @@ String FileName_Results_Short = "simgraph_results.txt";
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        org.openide.awt.Mnemonics.setLocalizedText(Button_RunIndependentTrials, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Button_RunIndependentTrials.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(Button_RunIndependentTrials, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Button_RunIndependentTrials.text")); // NOI18N
         Button_RunIndependentTrials.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_RunIndependentTrialsActionPerformed(evt);
             }
         });
 
-        Num_IndependentTrials.setText(org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.Num_IndependentTrials.text")); // NOI18N
+        Num_IndependentTrials.setText(org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.Num_IndependentTrials.text")); // NOI18N
         Num_IndependentTrials.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Num_IndependentTrialsActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(sim1TopComponent.class, "sim1TopComponent.jLabel9.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(simMainPanel.class, "simMainPanel.jLabel9.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
