@@ -2,7 +2,7 @@
     <type>org.netbeans.modules.apisupport.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
-            <code-name-base>org.william.simulation1</code-name-base>
+            <code-name-base>org.leibzon.simnetgames</code-name-base>
             <suite-component/>
             <module-dependencies>
                 <dependency>
@@ -80,7 +80,7 @@
                 </dependency>
             </module-dependencies>
             <public-packages>
-                <package>org.william.simulation1</package>
+                <package>org.leibzon.simnetgames</package>
             </public-packages>
         </data>
     </configuration>
